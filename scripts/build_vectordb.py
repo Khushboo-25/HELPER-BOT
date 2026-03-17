@@ -1,20 +1,20 @@
 """
 build_vectordb.py – Vector Database Builder
 =============================================
-Reads chunked documents and inserts them into ChromaDB
-with their embeddings and metadata.
-This is Phase 4 of the data pipeline.
+Reads chunked documents and inserts them into Supabase (pgvector)
+with embeddings and metadata.
 
 Usage:
-    python scripts/build_vectordb.py
+python scripts/build_vectordb.py
 
-Input:  data/chunks/all_chunks.json
-Output: vector_db/ (ChromaDB persistent storage)
+Input: data/chunks/all_chunks.json
+Output: Supabase table "documents"
 """
 import time
 import json
 import logging
 import sys
+import os
 from pathlib import Path
 
 # make sure we can import backend modules when running from scripts/

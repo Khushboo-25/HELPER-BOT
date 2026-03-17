@@ -107,6 +107,10 @@ async def ask_question(request: QuestionRequest):
         )
 
 
+@app.get("/")
+def home():
+    return {"message": "API is running"}
+
 # ── Run directly ──
 if __name__ == "__main__":
     import uvicorn
