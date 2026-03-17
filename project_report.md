@@ -5,8 +5,7 @@
 
 ---
 
-**Submitted by:** [Your Name]
-**Course / Subject:** [Course Name]
+**Submitted by:** [Khushboo Chaurasiya]
 **Date:** March 2026
 
 ---
@@ -270,7 +269,6 @@ The result is a working, usable application that genuinely solves a real problem
 
 ## 13. Screenshots
 
-*(Screenshots to be added after final UI review)*
 
 **Figure 1 — Chat Interface (UI Overview)**
 
