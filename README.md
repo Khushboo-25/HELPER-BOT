@@ -80,3 +80,7 @@ See [TECHNICAL_BLUEPRINT.md](TECHNICAL_BLUEPRINT.md) for the complete technical 
 ## 📝 License
 
 This project is built for educational / internship purposes.
+
+## ⚠️ Note: 
+
+Vector database and raw data are excluded due to size constraints. Run scripts to regenerate locally.
