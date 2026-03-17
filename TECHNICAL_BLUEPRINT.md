@@ -92,7 +92,7 @@ GitLab Data → Clean → Chunk → Embed → Store in ChromaDB
 ## 📁 Project Structure
 
 ```
-Joveo/
+Helpe-Bot/
 ├── backend/
 ├── frontend/
 ├── scripts/
