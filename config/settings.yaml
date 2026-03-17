@@ -1,0 +1,68 @@
+# ============================================================
+# GitLab Handbook RAG Chatbot - Configuration
+# ============================================================
+# This file contains default settings for the application.
+# Environment variables in .env will OVERRIDE these values.
+# ============================================================
+
+# --- Data Pipeline Settings ---
+data:
+  raw_dir: "data/raw"
+  processed_dir: "data/processed"
+  chunks_dir: "data/chunks"
+  # GitLab handbook source (git clone URL)
+  handbook_repo: "https://gitlab.com/gitlab-com/content-sites/handbook.git"
+  # Direction pages base URL
+  direction_url: "https://about.gitlab.com/direction/"
+
+# --- Chunking Settings ---
+chunking:
+  chunk_size: 1000          # Characters per chunk (~250 words)
+  chunk_overlap: 200        # Overlap between consecutive chunks
+  min_chunk_length: 50      # Discard chunks shorter than this
+  separators:
+    - "\n\n"                # First try: split at paragraphs
+    - "\n"                  # Then: split at line breaks
+    - ". "                  # Then: split at sentences
+    - " "                   # Last resort: split at words
+
+# --- Embedding Settings ---
+embedding:
+  model: "models/gemini-embedding-001"    # Google's Gemini embedding model
+  batch_size: 100                        # Process embeddings in batches
+
+# --- Vector Database Settings ---
+vector_db:
+  path: "./vector_db"
+  collection_name: "gitlab_handbook"
+  distance_metric: "cosine"             # cosine | l2 | ip
+
+# --- LLM Settings ---
+llm:
+  model: "models/gemini-2.5-flash"
+  temperature: 0.3                      # Lower = more factual, higher = more creative
+  max_output_tokens: 1024
+  top_k: 5                              # Number of chunks to retrieve
+
+# --- Prompt Template ---
+prompt:
+  system: |
+    You are a helpful AI assistant that answers questions about GitLab
+    using ONLY the provided context from GitLab's official handbook.
+
+    RULES:
+    - Answer ONLY based on the context provided below.
+    - If the context doesn't contain enough information, say
+      "I don't have enough information from the handbook to answer this question."
+    - Cite which section the information comes from.
+    - Be concise but thorough.
+    - Use bullet points for lists.
+    - If the question is not related to GitLab, politely redirect the user.
+
+# --- Server Settings ---
+server:
+  host: "0.0.0.0"
+  port: 8000
+  cors_origins:
+    - "http://localhost:3000"
+    - "http://localhost:8501"
