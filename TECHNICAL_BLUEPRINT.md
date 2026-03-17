@@ -134,13 +134,6 @@ Helpe-Bot/
 
 ---
 
-## 💬 Interview Explanation (Short)
-
-> Built a RAG-based chatbot using Gemini and ChromaDB.
-> Scraped GitLab handbook, chunked data, generated embeddings, and stored them.
-> At query time, relevant chunks are retrieved using cosine similarity and passed to LLM to generate accurate answers with sources.
-
----
 
 ## 📈 Future Improvements
 
