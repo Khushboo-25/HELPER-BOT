@@ -68,7 +68,7 @@ Build an AI-powered chatbot that:
 
 ### 2.1 High-Level Architecture Diagram
 
-```
+
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        USER INTERFACE                               │
 │                  (Streamlit / React Frontend)                       │
@@ -107,7 +107,7 @@ Build an AI-powered chatbot that:
 │  → Generate Embeddings → Store in   │
 │    Vector Database                   │
 └──────────────────────────────────────┘
-```
+
 
 ### 2.2 Components Explained
 
