@@ -14,7 +14,7 @@ User Question → Embedding → Vector Search (ChromaDB)
 ## 📁 Project Structure
 
 ```
-Joveo/
+Helper-Bot/
 ├── backend/              # FastAPI server + RAG engine
 │   ├── app.py            # API endpoints (/ask, /health)
 │   ├── rag_engine.py     # Core RAG pipeline
